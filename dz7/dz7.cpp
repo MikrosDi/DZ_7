@@ -15,7 +15,7 @@ using namespace std;
 
 #define MY_DIAPAZON(cin_number, diapazon) ((cin_number >= 0 && cin_number < diapazon))
 
-#define PUZIREK(a, b)
+#define PUZIREK(a, b)a = a^b;b = b ^ a;a = a ^ b;
 
 #pragma pack(push, 1)
 struct ANKETA 
@@ -69,7 +69,7 @@ int main()
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	cout << "Задание третье:" << endl;
-	PUZIREK(a, b)
+
 	int* b;
 	int a;
 	cout << "Введите ваше число: ";
@@ -88,10 +88,9 @@ int main()
 		for (int j = 0; j < a - i - 1; j++)
 		{
 			if (b[j] > b[j + 1])
-			{				
-				time_perem = b[j];
-				b[j] = b[j + 1];
-				b[j + 1] = time_perem;
+			{		
+				PUZIREK(b[j], b[j + 1]);
+				
 			}
 		}
 	}	
