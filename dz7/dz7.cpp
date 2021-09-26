@@ -88,8 +88,7 @@ int main()
 		for (int j = 0; j < a - i - 1; j++)
 		{
 			if (b[j] > b[j + 1])
-			{
-				
+			{				
 				time_perem = b[j];
 				b[j] = b[j + 1];
 				b[j + 1] = time_perem;
@@ -128,7 +127,7 @@ int main()
 	else
 	{
 		string ANKETA;		
-		fout << &Personal;
+		fout.write((char*)Personal, sizeof(Personal));
 	}
 	fout.close();
 
